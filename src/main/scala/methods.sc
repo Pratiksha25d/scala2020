@@ -47,4 +47,12 @@ def anyMethody(a:Int)={
     0.1f
 }
 
+def anyMethodz(a:Int)={
+  if(a==1)
+    false
+  else
+    2.0
+}
+anyMethodz(1)
+
 

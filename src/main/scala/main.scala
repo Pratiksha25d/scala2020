@@ -1,6 +1,6 @@
 object main {
  def main(args:Array[String]): Unit =
   {
-    println("Welcome...!!")
+    println("Enter Users choice...!!")
   }
 }
