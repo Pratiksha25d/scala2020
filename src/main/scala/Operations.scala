@@ -1,4 +1,4 @@
-object Operations {
+class Operations {
   def main(args:Array[String]): Unit = {
     println("Enter Users choice...!!")
     println("1.Addition \t" +

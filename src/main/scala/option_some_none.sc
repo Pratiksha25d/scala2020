@@ -35,3 +35,49 @@ op2 match{
     case Success(output) => println("ID is present "+output)
     case Failure(e) => println("error occured " + e)
 }
+
+
+def getInteger(input:String) = {
+    try {
+        Integer.parseInt(input)
+    }catch {
+        case nfe:NumberFormatException => throw new Exception("invalid input = " + input);
+        case e:Exception => throw new Exception("something went wrong = " + e.getMessage);
+    }
+}
+getInteger("2")
+
+
+def tryGetInteger(input:String) = {
+    Try {
+        Integer.parseInt(input)
+    }
+}
+
+val op1 = tryGetInteger("10")
+val op2 = tryGetInteger("dummy")
+op1 match {
+    case Success(output) => println("operation success " + output)
+    case Failure(e) => println("error occured " + e)
+}
+
+op2 match {
+    case Success(output) => println("operation success " + output)
+    case Failure(e) => println("error occured " + e)
+}
+op1.map(value => value +1)
+op2.map(value => value +1)
+
+
+
+def handleParsing(input:String) = {
+    if(input!=null && input.nonEmpty) {
+        input.toInt
+    }
+    else 0
+}
+handleParsing("2")
+handleParsing(null)
+handleParsing("")
+
+

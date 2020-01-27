@@ -1,3 +1,5 @@
+import scala.collection.immutable
+
 // #1 Find the last element of a list.
 def last(num: List[Int]) = {
   num.last
@@ -38,7 +40,25 @@ def palindrome(list1: List[Int]) = {
 palindrome(List(1,2,1))
 
 //#7 Flatten a nested list structure.
-def flatten(l1: List[Int],l2: List[Int],l3: List[Int]) = {
-  
-}
+def flattenList[Int](list: List[List[Int]]) = {
+  if (list.length==0)
+    List[Int]()
+  else
+    list.head ++ list.tail
 
+}
+flattenList(List(List(1, 2, 3), List(4, 5, 6)))
+
+//List(List(1, 2, 3), List(4, 5, 6)).flatten
+
+//#8 Eliminate consecutive duplicates of list elements.
+/*def conseDup(list : List[Int]) = {
+  list match {
+    case head::tail => {
+      val (duplist,mainlist) = list.span(_ == head)
+      duplist.head ::conseDup(mainlist) }
+    case Nil => List()
+  }
+}
+conseDup(List(1,2,2, 3,3,5,6,6,1,1,1))
+*/
